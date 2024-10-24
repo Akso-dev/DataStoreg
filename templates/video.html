@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Просмотр видео</title>
+    <link rel="stylesheet" href="/static/styles.css"> <!-- Добавь стили, если они нужны -->
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>VideoTube</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="video-section">
+            <!-- Видео, которое воспроизводится -->
+            <video width="640" height="360" controls>
+                <source src="/static/videos/{{ video_id }}" type="video/mp4">
+                Ваш браузер не поддерживает воспроизведение видео.
+            </video>
+
+            <p>Описание видео или другая информация о видео.</p>
+
+            <!-- Система лайков и дизлайков -->
+            <section class="video-actions">
+                <form action="/video/{{ video_id }}/like" method="POST">
+                    <button type="submit">👍 Лайк</button>
+                </form>
+                <form action="/video/{{ video_id }}/dislike" method="POST">
+                    <button type="submit">👎 Дизлайк</button>
+                </form>
+
+                <!-- Отображение количества лайков и дизлайков -->
+                <p>👍 Лайков: {{ likes }} | 👎 Дизлайков: {{ dislikes }}</p>
+            </section>
+
+            <!-- Комментарии -->
+            <section class="comments">
+                <h3>Комментарии</h3>
+
+                <!-- Форма для добавления комментария -->
+                {% if current_user.is_authenticated %}
+                    <div class="comment-form">
+                        <form action="/video/{{ video_id }}/comment" method="POST">
+                            <textarea name="content" placeholder="Напишите комментарий..." required></textarea>
+                            <button type="submit">Отправить</button>
+                        </form>
+                    </div>
+                {% else %}
+                    <p>Войдите в систему, чтобы оставлять комментарии.</p>
+                {% endif %}
+
+                <!-- Отображение комментариев -->
+                <div class="comment-list">
+                    {% for comment in comments %}
+                        <div class="comment">
+                            <p><strong>{{ comment.user.username }}:</strong> {{ comment.content }}</p>
+                            <p><small>{{ comment.timestamp }}</small></p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </section>
+        </section>
+    </main>
+</body>
+</html>

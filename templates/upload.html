@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загрузить Видео</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>VideoTube</h1>
+        </div>
+        <div class="user-menu">
+            <button>Вход</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="upload-form">
+            <h2>Загрузить Видео</h2>
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <input type="file" name="video" accept="video/*">
+                <button type="submit">Загрузить</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 VideoTube. Все права защищены.</p>
+    </footer>
+</body>
+</html>

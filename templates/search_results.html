@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты поиска</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>VideoTube</h1>
+        </div>
+
+        <!-- Форма поиска -->
+        <form action="/search" method="GET" class="search-form">
+            <input type="text" name="q" value="{{ query }}" placeholder="Поиск видео..." required>
+            <button type="submit">Поиск</button>
+        </form>
+    </header>
+
+    <main>
+        <h2>Результаты поиска для "{{ query }}"</h2>
+
+        <div class="search-results">
+            {% if results %}
+                <ul>
+                    {% for video in results %}
+                        <li>
+                            <a href="/video/{{ video.id }}">{{ video.title }}</a>
+                            <p>{{ video.description }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>Ничего не найдено.</p>
+            {% endif %}
+        </div>
+    </main>
+</body>
+</html>

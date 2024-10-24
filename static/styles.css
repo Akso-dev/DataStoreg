@@ -1,0 +1,157 @@
+/* Стили для страницы просмотра видео */
+.video-player {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.video-player video {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.video-info {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.video-info h2 {
+    margin-top: 0;
+}
+
+.video-actions {
+    margin-top: 10px;
+}
+
+.video-actions button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff0000;
+    color: white;
+    cursor: pointer;
+}
+
+.comments {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.comments h3 {
+    margin-top: 0;
+}
+
+.comment-form textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.comment-form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff0000;
+    color: white;
+    cursor: pointer;
+}
+
+.comment {
+    margin-top: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Стили для главной страницы */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #202020;
+    padding: 10px 20px;
+    color: white;
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header .search-bar input {
+    padding: 5px;
+    font-size: 16px;
+}
+
+header .search-bar button {
+    padding: 6px 10px;
+    background-color: #ff0000;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+header .user-menu button {
+    background-color: #ff0000;
+    border: none;
+    padding: 8px 15px;
+    color: white;
+    cursor: pointer;
+}
+
+main {
+    padding: 20px;
+}
+
+.video-list h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.video-item {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.video-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #202020;
+    color: white;
+    margin-top: 20px;
+}
+
